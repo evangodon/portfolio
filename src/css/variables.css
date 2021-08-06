@@ -1,0 +1,42 @@
+:root {
+  --black: #020202;
+  --white: #fff;
+
+  --color-primary: #f50057;
+  --color-primary-light: #ff4081;
+  --color-primary-dark: #f50057;
+
+  --grey-100: #fafafa;
+  --grey-200: #e2e8f0;
+  --grey-300: #cacaca;
+  --grey-400: #424242;
+  --grey-500: #121212;
+
+  --fs-xsmall: 1rem;
+  --fs-small: 1.2rem;
+  --fs-medium: 1.3rem;
+  --fs-default: 1.6rem;
+  --fs-large: 2.8rem;
+  --fs-xlarge: 3.2rem;
+
+  --space-1: 0.4rem;
+  --space-2: 0.8rem;
+  --space-3: 1.6rem;
+  --space-4: 2.4rem;
+  --space-5: 3.2rem;
+  --space-6: 4.8rem;
+}
+
+body {
+  --sidebar-bg: var(--grey-200);
+  --app-bg: var(--white);
+  --app-text-color: var(--grey-500);
+  --logo-grey: #718096;
+}
+
+body[data-theme='dark'] {
+  --sidebar-bg: var(--black);
+  --app-bg: var(--grey-500);
+  --app-text-color: var(--grey-100);
+  --logo-grey: #edf2f7;
+}
