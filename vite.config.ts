@@ -9,12 +9,16 @@ export default defineConfig({
       sourceMap: true,
       cacheDirectory: '.linaria-cache',
       extension: '.linaria.css',
+      babelOptions: {
+        presets: ['@babel/preset-typescript'],
+      },
     }),
   ],
   resolve: {
     alias: {
       react: 'preact-compat',
       'react-dom': 'preact-compat',
+      css: './src/css',
     },
   },
 });
