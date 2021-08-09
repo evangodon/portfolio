@@ -1,7 +1,6 @@
 import { styled } from '@linaria/react';
 import { Header } from '../components/typography/Header';
 import { Flex } from '../components/layout/index';
-import { Glitch } from '../components/glitch';
 import { GlitchEachWord } from '../components/glitch/GlitchEachWord';
 
 export const Home = () => {
@@ -11,7 +10,7 @@ export const Home = () => {
         <GlitchEachWord text="Hi, I'm Evan Godon" />
       </Header>
       <Header as="h2" size="large">
-        <GlitchEachWord text="I'm a software developer from Montreal. Welcome to my website." />
+        <GlitchEachWord text="I'm a software developer from Montreal." />
       </Header>
     </Container>
   );

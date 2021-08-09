@@ -9,6 +9,7 @@ type IncludeSpacing = {
 
 export const Box = styled.div<IncludeSpacing>`
   padding: ${(props) => (props.p ? theme.spacing[props.p] : 0)};
+  margin: ${(props) => (props.m ? theme.spacing[props.m] : 0)};
 `;
 
 type FlexProps = {

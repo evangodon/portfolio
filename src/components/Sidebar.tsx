@@ -7,6 +7,8 @@ import { Flex } from './layout';
 import { ComponentType } from 'preact';
 import { Home, User, Clipboard, Code, Icon } from 'react-feather';
 import { Glitch } from './glitch';
+import { NavLink } from './NavLink';
+import { Box } from './layout/index';
 
 const navLinks: { name: string; icon: Icon; link: string }[] = [
   {
@@ -34,23 +36,14 @@ const navLinks: { name: string; icon: Icon; link: string }[] = [
 export const Sidebar = () => {
   return (
     <Container>
-      <Flex direction="column" justify="center" m={6} gap={8}>
-        <Logo />
+      <Flex direction="column" justify="center">
+        <Box p={4} className={logoBox}>
+          <Logo />
+        </Box>
         <nav>
-          <Flex direction="column" gap={4}>
-            {navLinks.map((navItem) => (
-              <Link href={navItem.link} className={link}>
-                <a>
-                  <Glitch text={navItem.name} icon={navItem.icon}>
-                    {({ GlitchText, GlitchIcon }) => (
-                      <Flex align="center" gap={2}>
-                        <GlitchIcon size={18} />
-                        <GlitchText />
-                      </Flex>
-                    )}
-                  </Glitch>
-                </a>
-              </Link>
+          <Flex direction="column">
+            {navLinks.map((item) => (
+              <NavLink href={item.link} name={item.name} icon={item.icon} />
             ))}
           </Flex>
         </nav>
@@ -63,6 +56,6 @@ const Container = styled.div`
   background-color: ${theme.colors.sidebarBackground};
 `;
 
-const link = css`
-  cursor: pointer;
+const logoBox = css`
+  margin-bottom: 14rem;
 `;
