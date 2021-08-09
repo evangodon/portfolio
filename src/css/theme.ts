@@ -18,6 +18,8 @@ const theme = {
     4: '2.4rem',
     5: '3.2rem',
     6: '4.8rem',
+    7: '5.6rem',
+    8: '8rem',
   },
 } as const;
 

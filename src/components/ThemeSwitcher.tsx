@@ -8,8 +8,6 @@ const iconSize = 18;
 export const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
 
-  console.log({ theme });
-
   function toggleTheme() {
     const nextTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(nextTheme);
@@ -32,6 +30,7 @@ const Container = styled.div`
   border: 1px solid currentColor;
   border-radius: 3px;
   padding: ${theme.spacing[1]};
+  color: var(--color-primary);
   cursor: pointer;
   opacity: 0.75;
   transition: opacity 0.2s ease;

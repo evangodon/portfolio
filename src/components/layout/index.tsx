@@ -12,6 +12,7 @@ export const Box = styled.div<IncludeSpacing>`
 `;
 
 type FlexProps = {
+  gap?: Spacing;
   direction?: Property.FlexDirection;
   justify?: Property.JustifyContent;
   align?: Property.AlignItems;
@@ -24,4 +25,5 @@ export const Flex = styled.div<FlexProps>`
   align-items: ${(props) => (props.align ? props.align : 'stretch')};
   padding: ${(props) => (props.p ? theme.spacing[props.p] : 0)};
   margin: ${(props) => (props.m ? theme.spacing[props.m] : 0)};
+  gap: ${(props) => (props.gap ? theme.spacing[props.gap] : 0)};
 `;
