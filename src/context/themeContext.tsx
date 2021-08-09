@@ -8,21 +8,20 @@ type ThemeContext = {
   setTheme: StateUpdater<Theme>;
 };
 
-export const ThemeContext = createContext<ThemeContext>({
-  theme: 'light',
-} as ThemeContext);
+export const ThemeContext = createContext<ThemeContext>({} as ThemeContext);
 
 type Props = {
   children: ComponentChildren;
 };
 export const ThemeProvider = ({ children }: Props) => {
-  const [theme, setTheme] = useState<ThemeContext['theme']>('light');
+  const [theme, setTheme] = useState<ThemeContext['theme']>(getTheme());
 
   useEffect(() => {
     const body = document.querySelector('body');
 
     if (body) {
       body.setAttribute('data-theme', theme);
+      window.localStorage.setItem('theme', theme);
     }
   }, [theme]);
 
@@ -34,3 +33,15 @@ export const ThemeProvider = ({ children }: Props) => {
 };
 
 export const useTheme = () => useContext(ThemeContext);
+
+function getTheme(): Theme {
+  if (window) {
+    const theme = window.localStorage.getItem('theme');
+
+    if (theme) {
+      return theme as Theme;
+    }
+  }
+
+  return 'light';
+}

@@ -7,7 +7,7 @@ export const Home = () => {
   return (
     <Container direction="column" align="flex-start" justify="center">
       <Header as="h1" size="xlarge">
-        <GlitchEachWord text="Hi, I'm Evan Godon" />
+        <GlitchEachWord text="Hey, I'm Evan Godon" />
       </Header>
       <Header as="h2" size="large">
         <GlitchEachWord text="I'm a software developer from Montreal." />

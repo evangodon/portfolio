@@ -11,7 +11,7 @@ export const Container = styled.span`
   }
   &:hover svg:last-of-type {
     left: -2px;
-    color: var(--color-secondary);
+    color: var(--color-primary);
     animation: glitch_2 0.7s infinite linear alternate-reverse;
   }
 

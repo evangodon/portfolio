@@ -14,17 +14,15 @@ type Props = {
 export const NavLink = ({ href, name, icon }: Props) => {
   const [isActive] = useRoute(href);
 
-  console.log({ isActive });
-
   return (
     <Link href={href}>
       <a data-active={isActive} className={link}>
         <Glitch text={name} icon={icon}>
           {({ GlitchText, GlitchIcon }) => (
-            <Flex align="center" gap={2}>
+            <span className={navItem}>
               <GlitchIcon size={18} />
               <GlitchText />
-            </Flex>
+            </span>
           )}
         </Glitch>
       </a>
@@ -33,7 +31,6 @@ export const NavLink = ({ href, name, icon }: Props) => {
 };
 
 const link = css`
-  padding: ${theme.spacing[2]} ${theme.spacing[4]};
   cursor: pointer;
   opacity: 0.75;
   position: relative;
@@ -42,8 +39,9 @@ const link = css`
     content: '';
     position: absolute;
     left: 0;
-    top: 0;
-    height: 100%;
+    --height: 20px;
+    top: calc(50% - var(--height) / 2);
+    height: var(--height);
     width: 3px;
     border-radius: 3px;
     background-color: var(--color-primary);
@@ -59,4 +57,12 @@ const link = css`
   &[data-active='true']::before {
     opacity: 1;
   }
+`;
+
+const navItem = css`
+  width: 100%;
+  padding: ${theme.spacing[2]} ${theme.spacing[4]};
+  display: inline-flex;
+  align-items: center;
+  gap: ${theme.spacing[2]};
 `;
