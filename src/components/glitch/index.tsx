@@ -1,11 +1,10 @@
-import { ComponentType } from 'preact';
+import { Icon } from 'react-feather';
 import { useTheme } from '../../context/themeContext';
 
 import { Container } from './Container';
 import { TextContainer } from './Text';
 import { IconContainer } from './Icon';
 import { glitchAnimations } from './glitchAnimations';
-import { Icon } from 'react-feather';
 
 type Props = {
   text: string;

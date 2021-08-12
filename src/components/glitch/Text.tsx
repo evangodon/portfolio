@@ -1,37 +1,41 @@
 import { styled } from '@linaria/react';
 import { Container } from './Container';
 
-const glitch_copy = `
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-`;
-
 export const TextContainerBase = styled.span`
   position: relative;
+
   ${Container}:hover & {
     animation: glitch_skew 0.7s infinite linear alternate-reverse;
   }
+
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   ${Container} &::before,
   ${Container} &::after {
-    ${glitch_copy}
     clip: rect(44px, 450px, 56px, 0);
   }
+
   ${Container} &::before {
     text-shadow: -2px 0 var(--color-primary);
   }
+
   ${Container} &::after {
-    text-shadow: -2px 0 var(--color-primary), 2px 2px var(--color-primary);
+    text-shadow: -2px 0 var(--color-secondary), 2px 2px var(--color-secondary);
   }
+
   ${Container}:hover &::before {
-    ${glitch_copy}
     left: 1px;
     animation: glitch 1s infinite linear alternate-reverse;
   }
+
   ${Container}:hover &::after {
-    ${glitch_copy}
     left: -1px;
     animation: glitch_2 0.7s infinite linear alternate-reverse;
   }

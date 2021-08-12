@@ -19,7 +19,7 @@ export const LetterContainer = styled(TextContainer)`
     left: 3px;
   }
   &::after {
-    text-shadow: -3px 0 var(--color-primary), 2px 2px var(--color-primary);
+    text-shadow: -3px 0 var(--color-secondary), 2px 2px var(--color-secondary);
     left: -3px;
   }
 `;
