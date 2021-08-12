@@ -48,7 +48,7 @@ const H1 = styled.h1<CommonHeaderProps>`
 `;
 
 const H2 = styled.h2<CommonHeaderProps>`
-  font-weight: 500;
+  font-weight: 400;
   font-size: ${(props) => props.fontSize};
   color: ${(props) => props.color};
 `;

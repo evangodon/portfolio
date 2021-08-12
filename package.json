@@ -6,6 +6,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "inter-ui": "^3.19.3",
     "preact": "^10.5.13",
     "react-feather": "^2.0.9",
     "wouter-preact": "^2.7.4"
