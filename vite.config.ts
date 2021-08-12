@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import preact from '@preact/preset-vite';
 import linaria from 'vite-plugin-linaria-styled';
 import stylis from 'stylis';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 stylis.set({ prefix: false });
 
@@ -18,6 +19,7 @@ export default defineConfig({
         presets: ['@babel/preset-typescript'],
       },
     }),
+    visualizer(),
   ],
   resolve: {
     alias: {
