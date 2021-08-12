@@ -1,5 +1,5 @@
 import { Container } from './Container';
-import { LetterContainer } from './Letter';
+import { WordContainer } from './Word';
 import { useTheme } from '../../context/themeContext';
 
 type Props = {
@@ -10,11 +10,11 @@ export const GlitchEachWord = ({ text }: Props) => {
   const { theme } = useTheme();
   return (
     <>
-      {text.split(' ').map((letter, index) => (
+      {text.split(' ').map((word, index) => (
         <Container key={index}>
-          <LetterContainer data-text={letter} key={theme}>
-            {letter}
-          </LetterContainer>
+          <WordContainer data-text={word} key={theme}>
+            {word}
+          </WordContainer>
         </Container>
       ))}
     </>

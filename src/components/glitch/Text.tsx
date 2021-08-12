@@ -1,8 +1,9 @@
 import { styled } from '@linaria/react';
 import { Container } from './Container';
 
-export const TextContainerBase = styled.span`
+export const TextContainer = styled.span`
   position: relative;
+  top: 1px;
 
   ${Container}:hover & {
     animation: glitch_skew 0.7s infinite linear alternate-reverse;
@@ -249,12 +250,4 @@ export const TextContainerBase = styled.span`
       transform: skew(0.43deg);
     }
   }
-`;
-
-export const TextContainer = styled(TextContainerBase)<{
-  eachLetter?: boolean;
-}>`
-  display: ${(p) => (p.eachLetter ? 'inline-block' : 'block')};
-  position: relative;
-  top: 1px;
 `;

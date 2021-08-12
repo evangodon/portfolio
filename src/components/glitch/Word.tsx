@@ -1,7 +1,7 @@
 import { styled } from '@linaria/react';
 import { TextContainer } from './Text';
 
-export const LetterContainer = styled(TextContainer)`
+export const WordContainer = styled(TextContainer)`
   display: inline-block;
   margin-right: 8px;
 
