@@ -5,8 +5,21 @@
     <link rel="icon" type="image/svg+xml" href="/static/favicon/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Evan Godon</title>
+    <style>
+      body {
+        background-color: var(--app-bg);
+      }
+    </style>
   </head>
   <body>
+    <script>
+      const theme = window.localStorage.getItem('theme');
+
+      if (theme) {
+        const body = document.querySelector('body');
+        body.setAttribute('data-theme', theme);
+      }
+    </script>
     <div id="app"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

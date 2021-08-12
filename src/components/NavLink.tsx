@@ -64,5 +64,5 @@ const navItem = css`
   padding: ${theme.spacing[2]} ${theme.spacing[4]};
   display: inline-flex;
   align-items: center;
-  gap: ${theme.spacing[2]};
+  gap: ${theme.spacing[3]};
 `;

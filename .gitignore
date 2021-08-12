@@ -6,3 +6,5 @@ dist-ssr
 .linaria-cache
 
 .todo.md
+start.sh
+stats.html

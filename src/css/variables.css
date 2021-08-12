@@ -27,16 +27,16 @@
   --space-6: 4.8rem;
 }
 
-body {
-  --sidebar-bg: var(--grey-200);
-  --app-bg: var(--white);
-  --app-text-color: var(--grey-500);
-  --logo-grey: #718096;
-}
-
 body[data-theme='dark'] {
   --sidebar-bg: var(--black);
   --app-bg: var(--grey-500);
   --app-text-color: var(--grey-100);
   --logo-grey: #edf2f7;
+}
+
+body[data-theme='light'] {
+  --sidebar-bg: var(--grey-200);
+  --app-bg: var(--white);
+  --app-text-color: var(--grey-500);
+  --logo-grey: #718096;
 }
