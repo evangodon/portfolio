@@ -9,7 +9,7 @@ export const Home = () => {
       <Header as="h1" size="xlarge">
         <GlitchEachWord text="Hey, I'm Evan Godon" />
       </Header>
-      <Header as="h2" size="large">
+      <Header as="h2" size="large" variant="secondary">
         <GlitchEachWord text="I'm a software developer from Montreal." />
       </Header>
     </Container>

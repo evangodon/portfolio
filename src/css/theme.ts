@@ -2,6 +2,8 @@ const theme = {
   colors: {
     sidebarBackground: 'var(--sidebar-bg)',
     background: 'var(--grey-500)',
+    textPrimary: 'var(--text-color)',
+    textSecondary: 'var(--text-color-secondary)',
   },
   fontSize: {
     xsmall: '1rem',

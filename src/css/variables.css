@@ -9,7 +9,7 @@
   --grey-100: #fafafa;
   --grey-200: #e2e8f0;
   --grey-300: #cacaca;
-  --grey-400: #424242;
+  --grey-400: #4b5563;
   --grey-500: #121212;
 
   --fs-xsmall: 1rem;
@@ -30,13 +30,15 @@
 body[data-theme='dark'] {
   --sidebar-bg: var(--black);
   --app-bg: var(--grey-500);
-  --app-text-color: var(--grey-100);
+  --text-color-primary: var(--grey-100);
+  --text-color-secondary: var(--grey-300);
   --logo-grey: #edf2f7;
 }
 
 body[data-theme='light'] {
   --sidebar-bg: var(--grey-200);
   --app-bg: var(--white);
-  --app-text-color: var(--grey-500);
+  --text-color-primary: var(--grey-500);
+  --text-color-secondary: var(--grey-400);
   --logo-grey: #718096;
 }
