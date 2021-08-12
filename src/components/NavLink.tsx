@@ -35,6 +35,10 @@ const link = css`
   opacity: 0.75;
   position: relative;
 
+  &:hover {
+    opacity: 0.85;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -42,12 +46,16 @@ const link = css`
     --height: 20px;
     top: calc(50% - var(--height) / 2);
     height: var(--height);
-    width: 3px;
-    border-radius: 3px;
+    width: 4px;
+    border-radius: 5px;
     background-color: var(--color-primary);
     box-shadow: -2px 0 20px 5px var(--color-primary);
     opacity: 0;
     transition: opacity 0.3s ease;
+  }
+
+  body[data-theme='light'] &::before {
+    box-shadow: none;
   }
 
   &[data-active='true'] {
@@ -65,4 +73,5 @@ const navItem = css`
   display: inline-flex;
   align-items: center;
   gap: ${theme.spacing[3]};
+  font-size: ${theme.fontSize.default};
 `;
