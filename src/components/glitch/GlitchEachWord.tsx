@@ -3,20 +3,22 @@ import { WordContainer } from './Word';
 import { useTheme } from '../../context/themeContext';
 
 type Props = {
-    text: string;
+  text: string;
+  glitchOnMount?: boolean;
 };
 
-export const GlitchEachWord = ({ text }: Props) => {
-    const { theme } = useTheme();
-    return (
-        <>
-            {text.split(' ').map((word, index) => (
-                <Container key={index}>
-                    <WordContainer data-text={word} key={theme}>
-                        {word}
-                    </WordContainer>
-                </Container>
-            ))}
-        </>
-    );
+// TODO: wire up glitchOnMount prop
+export const GlitchEachWord = ({ text, glitchOnMount = false }: Props) => {
+  const { theme } = useTheme();
+  return (
+    <>
+      {text.split(' ').map((word, index) => (
+        <Container key={index}>
+          <WordContainer data-text={word} key={theme}>
+            {word}
+          </WordContainer>
+        </Container>
+      ))}
+    </>
+  );
 };

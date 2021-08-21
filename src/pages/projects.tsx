@@ -6,8 +6,8 @@ import { Header } from '../components/typography/Header';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { GlitchEachWord } from '../components/glitch/GlitchEachWord';
 
-export const About = () => {
-    useDocumentTitle('About | Evan Godon');
+export const Projects = () => {
+    useDocumentTitle('Projects | Evan Godon');
 
     return (
         <Container
@@ -17,7 +17,7 @@ export const About = () => {
             style={{ paddingTop: theme.spacing[8] }}
         >
             <Header as="h1" size="large" style={{ marginBottom: theme.spacing[8] }}>
-                <GlitchEachWord text="About Me" />
+                <GlitchEachWord text="Some Projects of Mine" />
             </Header>
         </Container>
     );

@@ -26,6 +26,8 @@
   --space-4: 2.4rem;
   --space-5: 3.2rem;
   --space-6: 4.8rem;
+  
+  --border-radius: 3px;
 }
 
 body[data-theme='dark'] {
