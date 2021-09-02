@@ -38,7 +38,6 @@ export const WorkExperience: React.FC<Props> = ({ job }) => {
                   }}
                 >
                   <GlitchText />
-                  <GlitchIcon size={15} strokeWidth={2} />
                 </Header>
               </Company>
             )}
@@ -130,6 +129,10 @@ const Company = styled.a`
   margin-bottom: ${theme.spacing[1]};
   display: flex;
   align-items: flex-start;
+
+  &:hover {
+    text-decoration: underline;
+  }
 
   svg {
     width: ${theme.fontSize.medium};

@@ -6,6 +6,8 @@ import { Header } from '../components/typography/Header';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { GlitchEachWord } from '../components/glitch/GlitchEachWord';
 import { Button } from '../components/Button';
+import linearCliImage from '../images/linear-cli.png';
+import photoShareImage from '../images/photo-share.png';
 
 type Project = {
   name: string;
@@ -20,14 +22,14 @@ const projects: Readonly<Project[]> = [
     description: `Linear is an issue tracker I was using at work.
                   I decided to create CLI tool to interact with it using their public Graphql API.
                   Built with Typescript, Graphql, and the oclif CLI framework.`,
-    image: '/static/images/linear-cli.png',
+    image: linearCliImage,
     repo: 'https://github.com/evangodon/linear-cli',
   },
   {
     name: 'Photo Share',
     description: `This is an app I created to share albums of photos. It gives a user the ability to create albums and upload images while authenticated using Google auth.
                   Built with React, Cloudinary, and FaunaDB.`,
-    image: '/static/images/photo-share.png',
+    image: photoShareImage,
     repo: 'https://github.com/evangodon/photo-share',
   },
 ];
