@@ -1,5 +1,6 @@
 const theme = {
   colors: {
+    primary: 'var(--color-primary)',
     sidebarBackground: 'var(--sidebar-bg)',
     background: 'var(--grey-500)',
     textPrimary: 'var(--text-color)',

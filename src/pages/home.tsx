@@ -21,7 +21,7 @@ export const Home = () => {
   return (
     <Container direction="column" align="flex-start" justify="center">
       <Header as="h1" size="xlarge">
-        <GlitchEachWord text="Hey, I'm Evan Godon" />
+        <GlitchEachWord text="Hi, I'm Evan Godon" />
       </Header>
       <Header as="h2" size="large" variant="secondary" style={{ marginBottom: theme.spacing[6] }}>
         <GlitchEachWord text="I'm a software developer from Montreal." />
@@ -35,9 +35,9 @@ export const Home = () => {
           <Linkedin size={16} />
           <span>Linkedin</span>
         </Button>
-        <Button href={links.linkedin}>
+        <Button href={links.resume}>
           <FileText size={16} />
-          <span>Résumé</span>
+          <span>Resume</span>
         </Button>
       </div>
     </Container>

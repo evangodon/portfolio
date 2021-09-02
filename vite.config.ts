@@ -25,7 +25,6 @@ export default defineConfig({
     alias: {
       react: 'preact-compat',
       'react-dom': 'preact-compat',
-      css: './src/css',
     },
   },
 });

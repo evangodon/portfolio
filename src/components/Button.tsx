@@ -31,10 +31,13 @@ const button = css`
   justify-content: center;
   gap: ${theme.spacing[2]};
   font-size: var(--fs-medium);
+  opacity: 0.85;
+  max-width: 14rem;
 
   --bg-hover-color: RGBA(255, 101, 80, 0.1);
   &:hover {
     background-color: var(--bg-hover-color);
+    opacity: 1;
   }
 
   body[data-theme='dark'] & {
