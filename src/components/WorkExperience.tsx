@@ -5,14 +5,14 @@ import { Glitch } from './glitch';
 import { Job } from '../pages/experience';
 import { Header } from './typography/Header';
 import { theme } from '../css/theme';
-import { Flex, Box } from './layout/index';
+import { Box } from './layout/index';
 
 type Props = {
   job: Job;
 };
 
 export const WorkExperience: React.FC<Props> = ({ job }) => {
-  const { company, timeRange, position, techstack, description } = job;
+  const { company, timeRange, position, techstack, description, image } = job;
 
   return (
     <>
@@ -20,7 +20,7 @@ export const WorkExperience: React.FC<Props> = ({ job }) => {
         <TimeRange>{timeRange}</TimeRange>
         <TimeLine>
           <IconContainer>
-            <MapPin size={13} />
+            <img src={image} />
           </IconContainer>
         </TimeLine>
         <Box>
@@ -90,7 +90,7 @@ const TimeLine = styled.div`
   justify-content: center;
   position: relative;
   background-color: var(--app-bg);
-  --icon-container-size: 3rem;
+  --icon-container-size: 4rem;
   --icon-container-margin-top: calc(var(--icon-container-size) / 3);
   --icon-container-diff: calc(var(--icon-container-size) - var(--icon-container-margin-top));
 
@@ -100,12 +100,12 @@ const TimeLine = styled.div`
     top: var(--icon-container-diff);
     display: block;
     height: calc(100% + ${theme.spacing[6]} + 2px);
-    width: 0.5px;
-    background-color: var(--color-primary);
+    width: 1px;
+    background-color: var(--grey-200);
   }
 
   ${Container}:last-of-type &::before {
-    background-image: linear-gradient(to bottom, var(--color-primary) 70%, var(--app-bg));
+    background-image: linear-gradient(to bottom, var(--grey-200) 70%, var(--app-bg));
   }
 `;
 
@@ -115,11 +115,16 @@ const IconContainer = styled.div`
   width: var(--icon-container-size);
   margin-top: calc(var(--icon-container-margin-top) * -1);
   line-height: var(--icon-container-size);
-  border: 1px solid var(--color-primary);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   border-radius: var(--border-radius);
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+
+  img {
+    max-width: 100%;
+  }
 `;
 
 const Company = styled.a`

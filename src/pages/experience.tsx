@@ -5,6 +5,9 @@ import { Flex } from '../components/layout/index';
 import { WorkExperience } from '../components/WorkExperience';
 import { theme } from '../css/theme';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
+import laneImg from '../images/lane.jpeg';
+import huddolImg from '../images/huddol.jpeg';
+import bmadImg from '../images/bmad.png';
 
 export type Job = {
   company: {
@@ -15,6 +18,7 @@ export type Job = {
   timeRange: string;
   techstack: string[];
   description: string;
+  image: string;
 };
 
 const jobs: Job[] = [
@@ -27,6 +31,7 @@ const jobs: Job[] = [
     timeRange: 'December 2019 - Present',
     techstack: ['React', 'React-Native', 'TypeScript', 'Node', 'GraphQL', 'PostgreSQL'],
     description: 'Lane is the world’s leading workplace experience platform.',
+    image: laneImg,
   },
   {
     company: {
@@ -37,6 +42,7 @@ const jobs: Job[] = [
     timeRange: 'August 2018 - August 2019',
     techstack: ['React', 'Redux', 'Laravel', 'MySQL', 'Jest'],
     description: 'Huddol is a platform for helping people improve their well-being.',
+    image: huddolImg,
   },
   {
     company: {
@@ -47,6 +53,7 @@ const jobs: Job[] = [
     timeRange: 'July 2017 - August 2018',
     techstack: ['React', 'Redux', 'Django', 'PostgreSQL'],
     description: `BMAD focuses on creating augmented reality and virtual reality experiences.`,
+    image: bmadImg,
   },
 ];
 
