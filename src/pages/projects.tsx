@@ -79,7 +79,8 @@ const Img = styled.img`
 `;
 
 const P = styled.p`
-  font-size: var(--fs-medium);
+  line-height: 1.5;
+  font-size: var(--fs-default);
   color: var(--text-color-secondary);
   max-width: 60ch;
   margin-bottom: ${theme.spacing[4]};

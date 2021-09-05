@@ -72,5 +72,5 @@ const navItem = css`
   display: inline-flex;
   align-items: center;
   gap: ${theme.spacing[3]};
-  font-size: ${theme.fontSize.default};
+  font-size: ${theme.fontSize.medium};
 `;

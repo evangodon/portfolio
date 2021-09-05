@@ -7,9 +7,9 @@ const theme = {
     textSecondary: 'var(--text-color-secondary)',
   },
   fontSize: {
-    xsmall: '1rem',
+    xsmall: 'var(--fs-xsmall)',
     small: '1.2rem',
-    medium: '1.3rem',
+    medium: '1.5rem',
     default: '1.6rem',
     large: '2rem',
     xlarge: '3.2rem',

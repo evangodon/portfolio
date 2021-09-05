@@ -31,7 +31,7 @@ export const Home = () => {
       <Header as="h1" size="xlarge">
         <GlitchEachWord text={copy.header} />
       </Header>
-      <Header as="h2" size="large" variant="secondary" style={{ marginBottom: theme.spacing[6] }}>
+      <Header as="h2" size="default" variant="secondary" style={{ marginBottom: theme.spacing[6] }}>
         {subHeader}
       </Header>
       <div className={buttonGroup}>
