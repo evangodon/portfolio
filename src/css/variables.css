@@ -42,6 +42,6 @@ body[data-theme='light'] {
   --sidebar-bg: var(--grey-200);
   --app-bg: var(--white);
   --text-color-primary: var(--grey-500);
-  --text-color-secondary: var(--grey-400);
+  --text-color-secondary: #596d6c;
   --logo-grey: #718096;
 }

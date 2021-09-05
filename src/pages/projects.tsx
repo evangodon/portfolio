@@ -50,7 +50,7 @@ export const Projects = () => {
       <Flex direction="column" gap={8}>
         {projects.map((project) => (
           <Flex gap={5}>
-            <Img src={project.image} />
+            <Img src={project.image} width="45" />
 
             <Flex direction="column" gap={2}>
               <Header as="h3" size="default">
@@ -75,11 +75,12 @@ const Img = styled.img`
   height: 23rem;
   border-radius: var(--border-radius);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  background-color: var(--grey-200);
 `;
 
 const P = styled.p`
   font-size: var(--fs-medium);
   color: var(--text-color-secondary);
-  max-width: 46.8rem;
+  max-width: 60ch;
   margin-bottom: ${theme.spacing[4]};
 `;

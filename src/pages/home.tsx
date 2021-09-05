@@ -7,6 +7,7 @@ import { Button } from '../components/Button';
 import { css } from '@linaria/core';
 import { theme } from '../css/theme';
 import { FileText, GitHub, Linkedin } from 'react-feather';
+import { useRenderLinks } from '../hooks/useRenderLinks';
 
 const links = {
   github: 'https://github.com/evangodon',
@@ -15,16 +16,23 @@ const links = {
     'https://docs.google.com/document/d/1vm5VBqI-NUYHorUHxQd0HA2QssGK2x0Us0xlnDhO_g4/edit?usp=sharing',
 };
 
+const copy = {
+  header: "Hi, I'm Evan Godon",
+  subHeader: `I'm a software developer from Montreal. This is my personal website
+  where you can learn more [about me](about) or view a few of my [side projects](projects).`,
+};
+
 export const Home = () => {
   useDocumentTitle('Home | Evan Godon');
+  const subHeader = useRenderLinks(copy.subHeader);
 
   return (
     <Container direction="column" align="flex-start" justify="center">
       <Header as="h1" size="xlarge">
-        <GlitchEachWord text="Hi, I'm Evan Godon" />
+        <GlitchEachWord text={copy.header} />
       </Header>
       <Header as="h2" size="large" variant="secondary" style={{ marginBottom: theme.spacing[6] }}>
-        <GlitchEachWord text="I'm a software developer from Montreal." />
+        {subHeader}
       </Header>
       <div className={buttonGroup}>
         <Button href={links.github}>

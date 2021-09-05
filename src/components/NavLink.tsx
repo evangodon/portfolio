@@ -3,7 +3,6 @@ import { Icon } from 'react-feather';
 import { theme } from '../css/theme';
 import { Link, useRoute } from 'wouter-preact';
 import { Glitch } from './glitch/index';
-import { Flex } from './layout/index';
 
 type Props = {
   href: string;

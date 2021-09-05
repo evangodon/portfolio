@@ -35,6 +35,7 @@ const button = css`
   max-width: 14rem;
 
   --bg-hover-color: RGBA(255, 101, 80, 0.1);
+
   &:hover {
     background-color: var(--bg-hover-color);
     opacity: 1;
