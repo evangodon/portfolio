@@ -16,7 +16,7 @@ export const TextContainer = styled.span`
   }
 
   ${Container} &::before,
-    ${Container} &::after {
+  ${Container} &::after {
     clip: rect(44px, 450px, 56px, 0);
   }
 

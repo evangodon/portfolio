@@ -7,11 +7,11 @@ const hyperLinkRegex = /\[.*\]/;
 const hrefRefex = /\(.*\)/;
 
 export const useRenderLinks = (text: string) => {
-  const renderedText = text.split(linkRegex).map((str) => {
+  /* Hyperlinks */
+  const withLinks = text.split(linkRegex).map((str) => {
     if (str.match(linkRegex)) {
       const hyperlink = str.match(hyperLinkRegex)![0].replace(/[\[\]\(\)]/g, '');
       const href = str.match(hrefRefex)![0].replace(/[()]/g, '');
-      console.log({ hyperlink });
 
       return href.startsWith('https://') ? (
         <ExternalLink href={href}>{hyperlink}</ExternalLink>
@@ -23,6 +23,16 @@ export const useRenderLinks = (text: string) => {
     }
 
     return `${str} `;
+  });
+
+  /* New lines */
+  const renderedText = withLinks.map((item) => {
+    if (typeof item === 'string') {
+      const withNewLine = item.split(/(<br>)/).map((str) => (str === '<br>' ? <br /> : str));
+
+      return withNewLine;
+    }
+    return item;
   });
 
   return renderedText;

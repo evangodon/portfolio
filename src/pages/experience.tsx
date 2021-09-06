@@ -13,11 +13,12 @@ export type Job = {
   company: {
     name: string;
     website: string;
+    description: string;
   };
   position: string;
   timeRange: string;
   techstack: string[];
-  description: string;
+  role: string;
   image: string;
 };
 
@@ -26,33 +27,39 @@ const jobs: Job[] = [
     company: {
       name: 'Lane',
       website: 'https://www.joinlane.com/',
+      description: `[Lane](https://www.joinlane.com/) is one of the world's leading workplace experience platforms.
+      They focus on improving tenant communication, ressource bookings, and e-commerce.`,
     },
     position: 'Software Developer',
     timeRange: 'December 2019 - Present',
     techstack: ['React', 'React-Native', 'TypeScript', 'Node', 'GraphQL', 'PostgreSQL'],
-    description: 'Lane is the world’s leading workplace experience platform.',
+    role: 'I currently work here building out core features using React and React Native.',
     image: laneImg,
   },
   {
     company: {
       name: 'Huddol',
       website: 'https://www.huddol.com/',
+      description:
+        '[Huddol](https://www.huddol.com/) is a platform for helping people improve their well-being.',
     },
     position: 'Front-End Developer',
     timeRange: 'August 2018 - August 2019',
     techstack: ['React', 'Redux', 'Laravel', 'MySQL', 'Jest'],
-    description: 'Huddol is a platform for helping people improve their well-being.',
+    role: 'I built the frontend features including designing the mobile version of the web app.',
     image: huddolImg,
   },
   {
     company: {
       name: 'Bmad',
       website: 'https://www.bmad.ca/',
+      description: `[BMAD](https://www.bmad.ca/) focuses on creating augmented reality and virtual reality experiences.`,
     },
     position: 'Front-End Developer',
     timeRange: 'July 2017 - August 2018',
-    techstack: ['React', 'Redux', 'Django', 'PostgreSQL'],
-    description: `BMAD focuses on creating augmented reality and virtual reality experiences.`,
+    techstack: ['React', 'Redux', 'SCSS', 'Django', 'PostgreSQL'],
+    role: `I kicked off my software developer career here working on interesting projects such as a version control file manager
+    for VFX artists and a VR video player using React 360.`,
     image: bmadImg,
   },
 ];
@@ -80,5 +87,5 @@ export const Experience = () => {
 };
 
 const Container = styled(Flex)`
-  grid-column: 2;
+  grid-column: 1 / -1;
 `;

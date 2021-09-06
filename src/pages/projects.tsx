@@ -80,7 +80,7 @@ const Img = styled.img`
 
 const P = styled.p`
   line-height: 1.5;
-  font-size: var(--fs-default);
+  font-size: var(--fs-medium);
   color: var(--text-color-secondary);
   max-width: 60ch;
   margin-bottom: ${theme.spacing[4]};

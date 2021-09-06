@@ -1,18 +1,18 @@
 import React from 'react';
 import { styled } from '@linaria/react';
-import { AlertCircle, ExternalLink, Layers, MapPin } from 'react-feather';
-import { Glitch } from './glitch';
+import { Info, Layers, Search } from 'react-feather';
 import { Job } from '../pages/experience';
 import { Header } from './typography/Header';
 import { theme } from '../css/theme';
 import { Box } from './layout/index';
+import { Text } from './typography/Text';
 
 type Props = {
   job: Job;
 };
 
 export const WorkExperience: React.FC<Props> = ({ job }) => {
-  const { company, timeRange, position, techstack, description, image } = job;
+  const { company, timeRange, position, techstack, role, image } = job;
 
   return (
     <>
@@ -24,28 +24,25 @@ export const WorkExperience: React.FC<Props> = ({ job }) => {
           </IconContainer>
         </TimeLine>
         <Box>
-          <Glitch text={company.name} icon={ExternalLink}>
-            {({ GlitchText, GlitchIcon }) => (
-              <Company href={company.website} target="_blank" rel="noopener">
-                <Header
-                  as="h2"
-                  size="medium"
-                  variant="primary"
-                  style={{
-                    display: 'inline-flex',
-                    gap: theme.spacing[2],
-                    fontWeight: 500,
-                  }}
-                >
-                  <GlitchText />
-                </Header>
-              </Company>
-            )}
-          </Glitch>
+          <Header
+            as="h2"
+            size="medium"
+            variant="primary"
+            style={{
+              display: 'inline-flex',
+              gap: theme.spacing[2],
+              fontWeight: 500,
+            }}
+          >
+            {company.name}
+          </Header>
           <Position>{position}</Position>
-          <Description>
-            <AlertCircle color={theme.colors.primary} /> <p>{description}</p>
-          </Description>
+          <Section>
+            <Info color={theme.colors.primary} /> <Text>{company.description}</Text>
+          </Section>
+          <Section>
+            <Search color={theme.colors.primary} /> <Text>{role}</Text>
+          </Section>
           <TechStack>
             <Layers color={theme.colors.primary} /> {techstack.join(', ')}
           </TechStack>
@@ -89,7 +86,6 @@ const TimeLine = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
-  background-color: var(--app-bg);
   --icon-container-size: 4rem;
   --icon-container-margin-top: calc(var(--icon-container-size) / 3);
   --icon-container-diff: calc(var(--icon-container-size) - var(--icon-container-margin-top));
@@ -101,11 +97,16 @@ const TimeLine = styled.div`
     display: block;
     height: calc(100% + ${theme.spacing[6]} + 2px);
     width: 1px;
-    background-color: var(--grey-200);
+    --timeline-color: var(--grey-200);
+    background-color: var(--timeline-color);
   }
 
   ${Container}:last-of-type &::before {
-    background-image: linear-gradient(to bottom, var(--grey-200) 70%, var(--app-bg));
+    background-image: linear-gradient(to bottom, var(--timeline-color) 70%, var(--app-bg));
+  }
+
+  body[data-theme='dark'] &::before {
+    --timeline-color: var(--grey-300);
   }
 `;
 
@@ -127,30 +128,6 @@ const IconContainer = styled.div`
   }
 `;
 
-const Company = styled.a`
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  display: inline-block;
-  margin-bottom: ${theme.spacing[1]};
-  display: flex;
-  align-items: flex-start;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  svg {
-    width: ${theme.fontSize.medium};
-    opacity: 0.6;
-    stroke-width: 1;
-  }
-
-  svg:hover {
-    stroke-width: 2px;
-    opacity: 1;
-  }
-`;
-
 const Position = styled.h4`
   margin-bottom: ${theme.spacing[4]};
   font-weight: 300;
@@ -158,19 +135,18 @@ const Position = styled.h4`
   color: ${theme.colors.textPrimary};
 `;
 
-const Description = styled.div`
+const Section = styled.div`
   display: flex;
   align-items: flex-start;
   gap: ${theme.spacing[2]};
   margin-bottom: ${theme.spacing[4]};
   font-size: var(--fs-medium);
-  color: var(--text-color-secondary);
 `;
 
 const TechStack = styled.div`
   display: flex;
   align-items: center;
   gap: ${theme.spacing[2]};
-  font-size: var(--fs-small);
+  font-size: var(--fs-medium);
   color: ${theme.colors.textSecondary};
 `;

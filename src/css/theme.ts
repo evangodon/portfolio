@@ -8,11 +8,11 @@ const theme = {
   },
   fontSize: {
     xsmall: 'var(--fs-xsmall)',
-    small: '1.2rem',
-    medium: '1.5rem',
-    default: '1.6rem',
-    large: '2rem',
-    xlarge: '3.2rem',
+    small: 'var(--fs-small)',
+    medium: 'var(--fs-medium)',
+    default: 'var(--fs-default)',
+    large: 'var(--fs-large)',
+    xlarge: 'var(--fs-xlarge)',
   },
   spacing: {
     1: '0.4rem',

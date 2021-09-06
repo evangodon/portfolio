@@ -1,19 +1,23 @@
 import { css } from '@linaria/core';
-import { theme } from '../../css/theme';
 import { useRenderLinks } from '../../hooks/useRenderLinks';
 
 type Props = {
   children: string;
+  maxWidth?: number;
 };
 
-export const Text = ({ children }: Props) => {
+export const Text = ({ children, maxWidth = 58 }: Props) => {
   const renderedText = useRenderLinks(children);
 
-  return <p class={paragraph}>{renderedText}</p>;
+  return (
+    <p class={paragraph} style={{ '--maxWidth': `${maxWidth}ch` }}>
+      {renderedText}
+    </p>
+  );
 };
 
 const paragraph = css`
   color: var(--text-color-secondary);
-  max-width: 60ch;
-  margin-bottom: ${theme.spacing[4]};
+  max-width: var(--maxWidth);
+  line-height: 1.4;
 `;
