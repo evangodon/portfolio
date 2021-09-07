@@ -19,7 +19,7 @@ const links = {
 const copy = {
   header: "Hi, I'm Evan Godon",
   subHeader: `I'm a software developer from Montreal. This is my personal website
-  where you can learn more [about me](/about) or view a few of my [side projects](/projects).`,
+  where you can learn more [about me](/about) and view a few of my [side-projects](/projects).`,
 };
 
 export const Home = () => {
