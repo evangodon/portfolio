@@ -26,11 +26,8 @@ export const WorkExperience: React.FC<Props> = ({ job }) => {
         <Box>
           <Header
             as="h2"
-            size="medium"
             variant="primary"
             style={{
-              display: 'inline-flex',
-              gap: theme.spacing[2],
               fontWeight: 500,
             }}
           >

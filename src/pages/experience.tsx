@@ -33,7 +33,7 @@ const jobs: Job[] = [
     position: 'Software Developer',
     timeRange: 'December 2019 - Present',
     techstack: ['React', 'React-Native', 'TypeScript', 'Node', 'GraphQL', 'PostgreSQL'],
-    role: 'I currently work here building out core features using React and React Native.',
+    role: 'I currently work here building out core features using React, React Native and Node.',
     image: laneImg,
   },
   {
@@ -41,12 +41,12 @@ const jobs: Job[] = [
       name: 'Huddol',
       website: 'https://www.huddol.com/',
       description:
-        '[Huddol](https://www.huddol.com/) is a platform for helping people improve their well-being.',
+        '[Huddol](https://www.huddol.com/) is a social media platform for helping people improve their well-being.',
     },
     position: 'Front-End Developer',
     timeRange: 'August 2018 - August 2019',
     techstack: ['React', 'Redux', 'Laravel', 'MySQL', 'Jest'],
-    role: 'I built the frontend features including designing the mobile version of the web app.',
+    role: 'I worked on the marketing pages and the web app while learning backend code with the Laravel framework.',
     image: huddolImg,
   },
   {
@@ -59,7 +59,7 @@ const jobs: Job[] = [
     timeRange: 'July 2017 - August 2018',
     techstack: ['React', 'Redux', 'SCSS', 'Django', 'PostgreSQL'],
     role: `I kicked off my software developer career here working on interesting projects such as a version control file manager
-    for VFX artists and a VR video player using React 360.`,
+    for VFX artists and a VR video player.`,
     image: bmadImg,
   },
 ];
