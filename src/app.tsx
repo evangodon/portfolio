@@ -10,20 +10,20 @@ import { ThemeProvider } from './context/themeContext';
 import { Projects } from './pages/projects';
 
 export function App() {
-    return (
-        <ThemeProvider>
-            <AppContainer>
-                <Sidebar />
-                <ThemeSwitcher />
-                <ContentContainer>
-                    <Switch>
-                        <Route path="/" component={Home} />
-                        <Route path="/about" component={About} />
-                        <Route path="/experience" component={Experience} />
-                        <Route path="/projects" component={Projects} />
-                    </Switch>
-                </ContentContainer>
-            </AppContainer>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider>
+      <AppContainer>
+        <Sidebar />
+        <ThemeSwitcher />
+        <ContentContainer>
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/experience" component={Experience} />
+            <Route path="/projects" component={Projects} />
+          </Switch>
+        </ContentContainer>
+      </AppContainer>
+    </ThemeProvider>
+  );
 }

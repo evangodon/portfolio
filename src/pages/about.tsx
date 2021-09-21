@@ -7,6 +7,7 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { GlitchEachWord } from '../components/glitch/GlitchEachWord';
 import profileImg from '../images/profile.jpg';
 import { Text } from '../components/typography/Text';
+import { breakpoint } from '../css/breakpoints';
 
 const profileSize = '180';
 
@@ -33,16 +34,20 @@ export const About = () => {
       <Header as="h1" size="large" style={{ marginBottom: theme.spacing[8] }}>
         <GlitchEachWord text="About Me" />
       </Header>
-      <Flex gap={8} align="center">
+      <Content gap={8} align="center">
         <Profile src={profileImg} width={profileSize} height={profileSize} />
         <Text maxWidth={65}>{copy.about}</Text>
-      </Flex>
+      </Content>
     </Container>
   );
 };
 
 const Container = styled(Flex)`
   grid-column: 1 / -1;
+
+  @media screen and (max-width: ${breakpoint.small}) {
+    padding-bottom: ${theme.spacing[5]};
+  }
 `;
 
 const Profile = styled.img`
@@ -50,4 +55,18 @@ const Profile = styled.img`
   border-radius: 50%;
   border: 2px solid var(--color-primary);
   background-color: var(--grey-200);
+
+  @media screen and (max-width: ${breakpoint.small}) {
+    --size: 120px;
+    max-width: var(--size);
+    height: var(--size);
+  }
+`;
+
+const Content = styled(Flex)`
+  @media screen and (max-width: ${breakpoint.medium}) {
+    flex-direction: column;
+    gap: ${theme.spacing[4]};
+    padding: 0 ${theme.spacing[4]};
+  }
 `;

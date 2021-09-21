@@ -3,9 +3,14 @@ html {
   font-family: 'Inter', 'system-ui';
 }
 
+html, body {
+  min-height: 100%;
+  min-width: 100%;
+  margin: 0;
+}
+
 body {
   height: 100%;
-  width: 100%;
   padding: 0;
   margin: 0;
   font-weight: 400;
@@ -15,6 +20,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: color, background-color 0.4s ease;
+  overflow: hidden;
 }
 
 *::selection {
@@ -26,6 +32,10 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+#app {
+  width: 100%;
 }
 
 a {
@@ -47,6 +57,14 @@ h1,h2,h3 {
 
 ::-webkit-scrollbar-track {
   background-color: var(--grey-200);
+}
+
+body[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background-color: var(--grey-400);
+}
+
+body[data-theme="dark"] ::-webkit-scrollbar-track {
+  background-color: var(--grey-600);
 }
 
 ::-webkit-scrollbar {

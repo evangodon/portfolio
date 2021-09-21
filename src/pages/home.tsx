@@ -8,6 +8,7 @@ import { css } from '@linaria/core';
 import { theme } from '../css/theme';
 import { FileText, GitHub, Linkedin } from 'react-feather';
 import { useRenderLinks } from '../hooks/useRenderLinks';
+import { breakpoint } from '../css/breakpoints';
 
 const links = {
   github: 'https://github.com/evangodon',
@@ -54,9 +55,18 @@ export const Home = () => {
 
 const Container = styled(Flex)`
   grid-column: 2;
+
+  @media screen and (max-width: ${breakpoint.medium}) {
+    padding: 0 ${theme.spacing[4]};
+  }
 `;
 
 const buttonGroup = css`
   display: flex;
   gap: ${theme.spacing[3]};
+
+  @media screen and (max-width: ${breakpoint.small}) {
+    flex-wrap: wrap;
+    padding: 0 ${theme.spacing[4]};
+  }
 `;

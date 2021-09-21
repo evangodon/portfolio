@@ -3,6 +3,7 @@ import { Icon } from 'react-feather';
 import { theme } from '../css/theme';
 import { Link, useRoute } from 'wouter-preact';
 import { Glitch } from './glitch/index';
+import { breakpoint } from '../css/breakpoints';
 
 type Props = {
   href: string;
@@ -45,12 +46,23 @@ const link = css`
     --height: 20px;
     top: calc(50% - var(--height) / 2);
     height: var(--height);
-    width: 4px;
+    --width: 4px;
+    width: var(--width);
     border-radius: 5px;
     background-color: var(--color-primary);
     box-shadow: -2px 0 20px 5px var(--color-primary);
     opacity: 0;
     transition: opacity 0.3s ease;
+  }
+
+  @media screen and (max-width: ${breakpoint.medium}) {
+    &::before {
+      height: 4px;
+      --width: 14px;
+      bottom: -5px;
+      top: auto;
+      left: calc(50% - var(--width) / 2);
+    }
   }
 
   body[data-theme='light'] &::before {
@@ -73,4 +85,17 @@ const navItem = css`
   align-items: center;
   gap: ${theme.spacing[3]};
   font-size: ${theme.fontSize.medium};
+
+  @media screen and (max-width: ${breakpoint.medium}) {
+    gap: ${theme.spacing[2]};
+    justify-content: space-evenly;
+    padding: ${theme.spacing[2]} ${theme.spacing[2]};
+  }
+
+  @media screen and (max-width: ${breakpoint.medium}) {
+    flex-direction: column;
+    align-items: center;
+    gap: ${theme.spacing[2]};
+    padding: ${theme.spacing[2]} ${theme.spacing[2]};
+  }
 `;

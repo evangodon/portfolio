@@ -6,9 +6,9 @@ import { Flex } from '../components/layout/index';
 import { Header } from '../components/typography/Header';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { GlitchEachWord } from '../components/glitch/GlitchEachWord';
-import { Button } from '../components/Button';
 import linearCliImage from '../images/linear-cli.png';
 import photoShareImage from '../images/photo-share.png';
+import { breakpoint } from '../css/breakpoints';
 
 type Project = {
   name: string;
@@ -50,7 +50,7 @@ export const Projects = () => {
       </Header>
       <Flex direction="column" gap={8}>
         {projects.map((project) => (
-          <Flex gap={5}>
+          <Project gap={5}>
             <Img src={project.image} width="45" />
 
             <Flex direction="column" gap={2}>
@@ -59,10 +59,10 @@ export const Projects = () => {
               </Header>
               <P>{project.description}</P>
               <RepoLink href={project.repo} target="_blank">
-                See Code <ChevronRight />{' '}
+                See Code <ChevronRight size={20} />{' '}
               </RepoLink>
             </Flex>
-          </Flex>
+          </Project>
         ))}
       </Flex>
     </Container>
@@ -71,6 +71,14 @@ export const Projects = () => {
 
 const Container = styled(Flex)`
   grid-column: 1 / -1;
+`;
+
+const Project = styled(Flex)`
+  @media screen and (max-width: ${breakpoint.large}) {
+    & {
+      flex-direction: column;
+    }
+  }
 `;
 
 const Img = styled.img`
@@ -94,4 +102,18 @@ const RepoLink = styled.a`
   color: var(--color-primary);
   display: inline-flex;
   align-items: center;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+
+  svg {
+    transition: transform 0.2s ease;
+  }
+
+  &:hover {
+    opacity: 1;
+
+    svg {
+      transform: translateX(10px);
+    }
+  }
 `;
