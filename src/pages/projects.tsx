@@ -1,4 +1,5 @@
 import { styled } from '@linaria/react';
+import { ChevronRight } from 'react-feather';
 
 import { theme } from '../css/theme';
 import { Flex } from '../components/layout/index';
@@ -57,7 +58,9 @@ export const Projects = () => {
                 {project.name}
               </Header>
               <P>{project.description}</P>
-              <Button href={project.repo}>Repo</Button>
+              <RepoLink href={project.repo} target="_blank">
+                See Code <ChevronRight />{' '}
+              </RepoLink>
             </Flex>
           </Flex>
         ))}
@@ -83,5 +86,12 @@ const P = styled.p`
   font-size: var(--fs-medium);
   color: var(--text-color-secondary);
   max-width: 60ch;
-  margin-bottom: ${theme.spacing[4]};
+  margin-bottom: ${theme.spacing[3]};
+`;
+
+const RepoLink = styled.a`
+  font-size: var(--fs-medium);
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
 `;
