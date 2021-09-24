@@ -13,6 +13,7 @@ import photoShareImage from '../images/photo-share.png';
 type Project = {
   name: string;
   description: string;
+  techStack: string;
   image: string;
   repo: string;
 };
@@ -22,14 +23,16 @@ const projects: Readonly<Project[]> = [
     name: 'Linear Cli',
     description: `Linear is an issue tracker I was using at work.
                   I decided to create CLI tool to interact with it using their public Graphql API.
-                  Built with Typescript, Graphql, and the oclif CLI framework.`,
+                  With this CLI, I can create tickets, view them, and sort them by tags and status.`,
+    techStack: 'Built with Typescript, Graphql, and the oclif CLI framework.',
     image: linearCliImage,
     repo: 'https://github.com/evangodon/linear-cli',
   },
   {
     name: 'Photo Share',
-    description: `This is an app I created to share albums of photos. It gives a user the ability to create albums and upload images while authenticated using Google auth.
-                  Built with React, Cloudinary, and FaunaDB.`,
+    description: `This is an app I created to share photos.
+                  I can  easily upload albums of images and create a grid where I can re-arrange the photos in the order I want.`,
+    techStack: 'Built with React, Cloudinary, and FaunaDB.',
     image: photoShareImage,
     repo: 'https://github.com/evangodon/photo-share',
   },
@@ -53,11 +56,12 @@ export const Projects = () => {
           <Flex gap={5}>
             <Img src={project.image} width="45" />
 
-            <Flex direction="column" gap={2}>
-              <Header as="h3" size="default">
+            <Flex direction="column" gap={1}>
+              <Header as="h3" size="default" style={{ fontWeight: 600 }}>
                 {project.name}
               </Header>
               <P>{project.description}</P>
+              <TechStack>{project.techStack}</TechStack>
               <RepoLink href={project.repo} target="_blank">
                 See Code <ChevronRight />{' '}
               </RepoLink>
@@ -82,10 +86,17 @@ const Img = styled.img`
 `;
 
 const P = styled.p`
-  line-height: 1.5;
+  line-height: 1.4;
   font-size: var(--fs-medium);
-  color: var(--text-color-secondary);
+  color: var(--text-color-primary);
   max-width: 60ch;
+  margin-bottom: ${theme.spacing[1]};
+`;
+
+const TechStack = styled.span`
+  font-size: var(--fs-small);
+  color: var(--text-color-secondary);
+  font-style: italic;
   margin-bottom: ${theme.spacing[3]};
 `;
 
