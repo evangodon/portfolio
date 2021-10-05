@@ -6,6 +6,7 @@ import { Header } from './typography/Header';
 import { theme } from '../css/theme';
 import { Box } from './layout/index';
 import { Text } from './typography/Text';
+import { breakpoint } from '../css/breakpoints';
 
 type Props = {
   job: Job;
@@ -62,6 +63,11 @@ const Container = styled.div`
     width: var(--size);
     min-width: 1.4rem;
   }
+
+  @media screen and (max-width: ${breakpoint.small}) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Line = styled.span`
@@ -77,6 +83,11 @@ const TimeRange = styled.span`
   color: ${theme.colors.textSecondary};
   text-align: right;
   text-transform: uppercase;
+
+  @media screen and (max-width: ${breakpoint.small}) {
+    text-align: left;
+    margin-bottom: ${theme.spacing[2]};
+  }
 `;
 
 const TimeLine = styled.div`
@@ -104,6 +115,10 @@ const TimeLine = styled.div`
 
   body[data-theme='dark'] &::before {
     --timeline-color: var(--grey-300);
+  }
+
+  @media screen and (max-width: ${breakpoint.small}) {
+    display: none;
   }
 `;
 

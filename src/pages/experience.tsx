@@ -8,6 +8,7 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import laneImg from '../images/lane.jpeg';
 import huddolImg from '../images/huddol.jpeg';
 import bmadImg from '../images/bmad.png';
+import { breakpoint } from '../css/breakpoints';
 
 export type Job = {
   company: {
@@ -88,4 +89,10 @@ export const Experience = () => {
 
 const Container = styled(Flex)`
   grid-column: 1 / -1;
+
+  @media screen and (max-width: ${breakpoint.small}) {
+    margin-top: 28rem;
+    padding: ${theme.spacing[6]} ${theme.spacing[4]};
+    height: 100%;
+  }
 `;
